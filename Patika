@@ -1,0 +1,21 @@
+Question-1
+
+def flatten_list(f_list):
+  result = []
+  for item in f_list:
+    if isinstance(item, list):
+      result.extend(flatten_list(item))
+    else:
+      result.append(item)
+  return result
+
+Question-2
+
+def reverse_list(r_list):
+  reversed_list = input_list[: : -1]
+
+  for i in range(len(reversed_list)):
+    if isinstance(reversed_list[i], list):
+      reversed_list[i] = reverse_list(reversed_list[i])
+
+  return reversed_list
